@@ -11,51 +11,53 @@ Blood Sugar Level
 
 The system uses fuzzy logic to evaluate these values and categorize the overall health condition into three levels: Low, Normal, or Worst.
 
- Features
-Fuzzification of inputs with membership functions.
+Features
+Fuzzification of inputs using membership functions
 
-Rule-based inference system using real-world health logic.
+Rule-based inference system using real-world medical logic
 
-Defuzzification to get a crisp health score.
+Defuzzification to get a crisp health score
 
-Visual representation of fuzzy sets and evaluation.
+Visual representation of fuzzy sets and input/output behavior
 
- Inputs
+Inputs
 Parameter	Range	Description
 Blood Pressure	80 – 180 mmHg	Systolic measurement
 Temperature	98 – 106 °F	Body temperature
 Age	15 – 96 yrs	Patient’s age
 Sugar Level	70 – 200 mg/dL	Blood glucose level
 
-📤 Output
-Health Condition: A value between 0 and 1, where:
+Note: The system uses blood pressure as an input to evaluate health condition, but it does not calculate or predict blood pressure.
 
-0.0 – 0.5: Low risk
+Output
+Health Condition Score: A crisp value between 0 and 1
+
+0.0 – 0.5: Low Risk
 
 0.5: Normal
 
-> 0.5: High/Worst condition
+> 0.5: High / Critical Risk
 
- Fuzzy Rules
-Rule 1: Combines blood pressure and temperature to detect low risk.
+Fuzzy Rules
+Rule 1: Combines blood pressure and temperature to detect low risk
 
-Rule 2: Relates age with sugar level to infer normal condition.
+Rule 2: Relates age with sugar level to infer normal condition
 
-Rule 3: Captures critical combinations leading to worst condition.
+Rule 3: Captures critical combinations leading to worst condition
 
- How It Works
-Define Antecedents and Consequents (input and output fuzzy variables).
+How It Works
+Define Antecedents (inputs) and Consequent (output)
 
-Set Membership Functions for each variable.
+Set up membership functions for each variable
 
-Create Rules based on expert knowledge.
+Create rules based on expert knowledge
 
-Simulate using real values.
+Simulate the system with actual patient data
 
-Visualize membership functions and result.
+Display the output and visualize fuzzy sets
 
- Example Run
-For inputs:
+Example
+For the following inputs:
 
 python
 Copy
@@ -64,17 +66,16 @@ blood_pressure = 140
 temperature = 104
 age = 70
 sugar_level = 180
-The system outputs:
+The output will be:
 
-sql
+text
 Copy
 Edit
 Health Condition: 0.708...
 This indicates a critical health condition.
+All fuzzy membership functions and input positions are visualized using matplotlib.
 
-All fuzzy membership functions and crisp inputs are also visualized for interpretation.
-
- Requirements
+Requirements
 Python 3.x
 
 numpy
@@ -89,7 +90,7 @@ bash
 Copy
 Edit
 pip install numpy matplotlib scikit-fuzzy
- File Structure
+File Structure
 bash
 Copy
 Edit
@@ -100,5 +101,4 @@ Medical Decision Support
 
 Smart Health Monitoring Systems
 
-Embedded Health Devices (Raspberry Pi, etc.)
-
+Embedded Health Devices (e.g., Raspberry Pi)
